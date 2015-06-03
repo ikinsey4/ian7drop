@@ -15,7 +15,7 @@ import javax.ws.rs.core.MediaType;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
-@Path("/hello-world")
+@Path("/")
 @Produces(MediaType.APPLICATION_JSON)
 public class HelloWorldResource {
     private static final Logger LOGGER = LoggerFactory.getLogger(HelloWorldResource.class);

@@ -92,7 +92,7 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
                 .setSecurityContextFunction(getSecurityContextFunction())
                 .setRealm("SUPER SECRET STUFF")
                 .buildAuthFilter()));
-        environment.jersey().register(new AuthValueFactoryProvider.Binder(User.class));
+        environment.jersey().register(new AuthValueFactoryProvider.Binder<User>(User.class));
         environment.jersey().register(RolesAllowedDynamicFeature.class);
         environment.jersey().register(new HelloWorldResource(template));
         environment.jersey().register(new ViewResource());
