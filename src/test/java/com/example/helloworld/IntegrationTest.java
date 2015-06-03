@@ -55,7 +55,7 @@ public class IntegrationTest {
     @Test
     public void testHelloWorld() throws Exception {
         final Optional<String> name = Optional.fromNullable("Dr. IntegrationTest");
-        final Saying saying = client.target("http://localhost:" + RULE.getLocalPort() + "/hello-world")
+        final Saying saying = client.target("http://localhost:" + RULE.getLocalPort() + "/")
                 .queryParam("name", name.get())
                 .request()
                 .get(Saying.class);
