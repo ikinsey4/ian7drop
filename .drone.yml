@@ -21,6 +21,6 @@ publish:
 notify:
   webhook:
     urls:
-      - "http://shipped-api.tx.shipped-cisco.com"
+      - "http://shipped-api.tx.shipped-cisco.com/webhooks/drone"
     on_success: true
     on_failure: true
