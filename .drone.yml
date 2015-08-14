@@ -1,0 +1,26 @@
+image: jamesdbloom/docker-java8-maven
+git:
+  path: github.com/ikinsey4/ian7drop
+script:
+  - echo "build commands"
+  - bin/build
+  - bin/test
+publish:
+  docker:
+    dockerfile: ./Dockerfile
+    docker_host: 128.107.8.82:2375
+    docker_version: 1.4.1
+    registry_login_url: $$bintray_repo_login_url
+    registry_login: true
+    username: $$bintray_user
+    password: $$bintray_api_key
+    email: $$bintray_user_email
+    image_name: $$bintray_image_name
+    push_latest: true
+    tag: $DRONE_COMMIT
+notify:
+  webhook:
+    urls:
+      - "http://shipped-api.tx.shipped-cisco.com"
+    on_success: true
+    on_failure: true
